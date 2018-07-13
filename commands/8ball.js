@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
 if(!args[1]) return message.reply("please ask a full question");
-let replies = ["yes", "no","i dont know", "ask again later"];
+let replies = ["Fuck yes", "Hell no","Bitch i dont know", "Fuck off ask again later"];
 
 let result = Math.floor((Math.random()* replies.length));
 let question = args.slice(0).join(" ");

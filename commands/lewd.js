@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
     let hentaiEmbed = new Discord.RichEmbed()
     .setColor("#ff9900")
-    .setTitle("Why does someone put a command like this?")
+    .setTitle("Who loves Neko?")
     .setImage(body.neko)
     .setFooter("Bot Version: 0.0.1");
 
