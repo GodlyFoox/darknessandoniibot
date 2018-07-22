@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You don't have the proper perms")
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You don't have the proper perms")
  if(!args[0]) return message.channel.send("no can do");
 
 const embed = new Discord.RichEmbed()

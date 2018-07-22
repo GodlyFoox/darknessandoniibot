@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     const embed = new Discord.RichEmbed()
     .setColor(0xffffff)
     .setTitle(`Math Equation`)
-    .addField('Input', `\`\`\`js\n${args.join(" ")}\`\`\``)
-    .addField('Output', `\`\`\`js\n${resp}\`\`\``);
+    .addField('Equation', `\`\`\`js\n${args.join(" ")}\`\`\``)
+    .addField('Answer', `\`\`\`js\n${resp}\`\`\``);
 
     message.channel.send(embed);
 

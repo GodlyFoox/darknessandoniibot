@@ -2,17 +2,19 @@ const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You can't do that!:sob:");
-    let wUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    let uicon = message.author.displayAvatarURL;
+    let user = message.mentions.users.first() || message.author;
 
 
     let userembed = new Discord.RichEmbed()
-    .setDescription("User Information")
-    .setThumbnail(uicon)
+    .setDescription(`This is **${user.username}** their info!`)
+    .setThumbnail(user.displayAvatarURL)
     .setColor("RANDOM")
-    .addField("Username: ", message.author.username)
-    .addField("It was created on: ", message.author.createdAt);
+    .setAuthor(`${user.username}`)
+    .addField("Full Username", `${user.username}#${user.discriminator}`)
+    .addField("ID", user.id)
+    .addField("Mention", user)
+    .addField("Joined On", message.guild.member(user).joinedAt )
+    .addField("Created On: ", user.createdAt);
 
 
 

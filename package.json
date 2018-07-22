@@ -9,10 +9,21 @@
   "author": "Onii-chan",
   "license": "ISC",
   "dependencies": {
+    "ascii-art": "^1.4.3",
     "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^4.0.0",
+    "fortnite": "^4.1.1",
+    "mathjs": "^5.0.2",
+    "node-gyp": "^3.7.0",
+    "opusscript": "0.0.6",
     "pornsearch": "^2.4.2",
     "quick.hook": "^1.4.2",
     "random-puppy": "^1.1.0",
-    "snekfetch": "^4.0.4"
+    "rebuild": "^0.1.2",
+    "relevant-urban": "^2.0.0",
+    "snekfetch": "^4.0.4",
+    "weather-js": "^2.0.0",
+    "yt-search": "^0.1.4",
+    "ytdl-core": "^0.20.4"
   }
 }

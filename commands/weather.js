@@ -8,7 +8,7 @@ weather.find({search: args.join(" "), degreeType: `c`}, function(err, result) {
         return message.channel.send("**please enter a valid location.**")
     }
     var current = result[0].current;
-    var location = result[0].location; 
+    var location = result[0].location;
 
     let embed = new Discord.RichEmbed()
     .setDescription(`**${current.skytext}**`)

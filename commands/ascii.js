@@ -11,8 +11,10 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(rendered, {
             code: `md`
+
         });
     });
+    message.delete().catch();
 }
 
 module.exports.help = {

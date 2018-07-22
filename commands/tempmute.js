@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) =>{
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("Couldn't find user! :frowning:");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Can't Mute Them! :sob:");
+  if(tomute.hasPermission("KICK_MEMBERS")) return message.reply("Can't Mute Them! :sob:");
   let muterole = message.guild.roles.find(`name`, "muted");
   //Start of create role
   if(!muterole){
@@ -19,15 +19,11 @@ module.exports.run = async (bot, message, args) =>{
       })
       message.guild.channels.forEach(async (channel, id) => {
         await channel.overwritePermissions(muterole, {
-          SEND_MESSAGE: false,
-          ADD_REACTIONS: false,
-          READ_MESSAGES: true,
+          SEND_MESSAGES: false,
           READ_MESSAGE_HISTORY: false,
           CONNECT: false,
-          SPEAK: false,
-          EMBED_LINKS: false,
-          ATTACH_FILES: false,
-          CREATE_INSTANT_INVITE: false
+          CREATE_INSTANT_INVITE: true,
+          READ_MESSAGES: true
         });
       });
     }catch(e){
@@ -45,7 +41,7 @@ module.exports.run = async (bot, message, args) =>{
   .addField("Muted In", message.channel)
   .addField("Time", message.createdAt)
 
-  await(tomute.addRole(muterole.id));
+  await tomute.addRole(muterole.id);
   message.reply(`<@${tomute.id}> has been muted for ${ms(ms(mutetime))}`);
 
   setTimeout(function(){
